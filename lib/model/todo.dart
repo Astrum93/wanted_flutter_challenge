@@ -1,14 +1,17 @@
-class Todo {
+class TodoModel {
+  final int id;
   final String title;
   final TodoStatus status;
   final DateTime createAt;
   final DateTime updatedAt;
 
-  Todo(
-      {required this.title,
-      required this.status,
-      required this.createAt,
-      required this.updatedAt});
+  TodoModel({
+    required this.id,
+    required this.title,
+    required this.status,
+    required this.createAt,
+    required this.updatedAt,
+  });
 }
 
 enum TodoStatus {
