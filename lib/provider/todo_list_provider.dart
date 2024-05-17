@@ -9,4 +9,12 @@ class TodoList extends _$TodoList {
   List<TodoModel> build() {
     return [];
   }
+
+  void addTodo(String title) {
+    final now = DateTime.now();
+    final id = state.length;
+
+    final todo = TodoModel.create(id: id, title: title, createdAt: now);
+    state = [...state, todo];
+  }
 }
