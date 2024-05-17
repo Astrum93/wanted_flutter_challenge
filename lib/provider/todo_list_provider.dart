@@ -17,4 +17,8 @@ class TodoList extends _$TodoList {
     final todo = TodoModel.create(id: id, title: title, createdAt: now);
     state = [...state, todo];
   }
+
+  TodoModel getTodo(int id) {
+    return state.firstWhere((todo) => todo.id == id);
+  }
 }
