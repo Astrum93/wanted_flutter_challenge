@@ -6,6 +6,26 @@ class AddTodoScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const Placeholder();
+    final TextEditingController titleController = TextEditingController();
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Add Todo'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Form(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextFormField(
+                  controller: titleController,
+                  decoration: const InputDecoration(
+                    labelText: 'Title',
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
