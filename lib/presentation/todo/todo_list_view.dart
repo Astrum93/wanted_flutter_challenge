@@ -20,10 +20,14 @@ class TodoListView extends ConsumerWidget {
         return ListTile(
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => TodoDetailScreen(
-                id: todo.id,
-              ),
+              builder: (context) => TodoDetailScreen(id: todo.id),
             ),
+          ),
+          title: Text(todo.title),
+          subtitle: Text(todo.status.toString()),
+          trailing: IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.arrow_forward),
           ),
         );
       },
