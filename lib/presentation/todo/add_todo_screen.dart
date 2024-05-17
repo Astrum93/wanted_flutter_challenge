@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wanted_flutter_challenge/provider/todo_list_provider.dart';
 
 class AddTodoScreen extends ConsumerWidget {
   const AddTodoScreen({super.key});
@@ -22,6 +23,17 @@ class AddTodoScreen extends ConsumerWidget {
                   decoration: const InputDecoration(
                     labelText: 'Title',
                   ),
+                ),
+                const SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () {
+                    print('Add todo: ${titleController.text}');
+                    ref
+                        .read(todoListProvider.notifier)
+                        .addTodo(titleController.text);
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Add'),
                 ),
               ],
             ),
