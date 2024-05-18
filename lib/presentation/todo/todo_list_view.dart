@@ -17,17 +17,39 @@ class TodoListView extends ConsumerWidget {
       itemCount: list.length,
       itemBuilder: (context, index) {
         final todo = list[index];
-        return ListTile(
+        return GestureDetector(
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) => TodoDetailScreen(id: todo.id),
             ),
           ),
-          title: Text(todo.title),
-          subtitle: Text(todo.status.toString()),
-          trailing: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.arrow_forward),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 80,
+            color: Colors.grey,
+            padding: const EdgeInsets.all(8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  todo.title,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.arrow_forward),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(todo.status.toString()),
+                  ],
+                ),
+              ],
+            ),
           ),
         );
       },

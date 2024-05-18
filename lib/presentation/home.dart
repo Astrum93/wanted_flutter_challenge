@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
         ),
         body: const TodoListView(),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.greenAccent,
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
