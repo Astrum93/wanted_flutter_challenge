@@ -5,13 +5,13 @@ import 'package:wanted_flutter_challenge/presentation/home.dart';
 void main() {
   runApp(
     const ProviderScope(
-      child: RiverpodTodoApp(),
+      child: TodoApp(),
     ),
   );
 }
 
-class RiverpodTodoApp extends StatelessWidget {
-  const RiverpodTodoApp({super.key});
+class TodoApp extends StatelessWidget {
+  const TodoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
