@@ -27,7 +27,7 @@ class AddTodoScreen extends ConsumerWidget {
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {
-                    print('Add todo: ${titleController.text}');
+                    debugPrint('Add todo: ${titleController.text}');
                     ref
                         .read(todoListProvider.notifier)
                         .addTodo(titleController.text);

@@ -8,28 +8,28 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            '오늘의 할 일',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+      appBar: AppBar(
+        title: const Text(
+          '오늘의 할 일',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
           ),
-          centerTitle: true,
-          backgroundColor: Colors.greenAccent,
         ),
-        body: const TodoListScreen(),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.greenAccent,
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => const AddTodoScreen(),
-              ),
-            );
-          },
-          child: const Icon(Icons.add),
-        ));
-    ;
+        centerTitle: true,
+        backgroundColor: Colors.greenAccent,
+      ),
+      body: const TodoListScreen(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.greenAccent,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const AddTodoScreen(),
+            ),
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
   }
 }
