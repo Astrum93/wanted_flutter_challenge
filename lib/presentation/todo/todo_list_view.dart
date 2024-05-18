@@ -18,7 +18,7 @@ class TodoListView extends ConsumerWidget {
       itemBuilder: (context, index) {
         final todo = list[index];
         return GestureDetector(
-          onTap: () => Navigator.of(context).push(
+          onLongPress: () => Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) => TodoDetailScreen(id: todo.id),
             ),
@@ -38,15 +38,23 @@ class TodoListView extends ConsumerWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(Icons.arrow_forward),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text(todo.status.toString()),
-                  ],
+                GestureDetector(
+                  onTap: () {
+                    debugPrint('status Clicked!');
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.check_box_outline_blank_rounded),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        todo.status.toString(),
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
