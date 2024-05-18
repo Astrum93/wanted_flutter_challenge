@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wanted_flutter_challenge/presentation/todo/empty_todo_list_screen.dart';
 import 'package:wanted_flutter_challenge/presentation/todo/todo_detail_screen.dart';
 import 'package:wanted_flutter_challenge/provider/todo_list_provider.dart';
 
@@ -11,7 +12,7 @@ class TodoListScreen extends ConsumerWidget {
     final list = ref.watch(todoListProvider);
 
     if (list.isEmpty) {
-      return const EmptyTodoListView();
+      return const EmptyTodoListScreen();
     }
     return ListView.builder(
       itemCount: list.length,
@@ -61,17 +62,6 @@ class TodoListScreen extends ConsumerWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class EmptyTodoListView extends StatelessWidget {
-  const EmptyTodoListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('일정이 없습니다.😂'),
     );
   }
 }
