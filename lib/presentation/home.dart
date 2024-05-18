@@ -9,7 +9,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Riverpod Todo App'),
+          title: const Text(
+            '오늘의 할 일',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.greenAccent,
         ),
         body: const TodoListView(),
         floatingActionButton: FloatingActionButton(
