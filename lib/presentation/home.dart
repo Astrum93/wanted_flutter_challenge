@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wanted_flutter_challenge/presentation/todo/add_todo_screen.dart';
-import 'package:wanted_flutter_challenge/presentation/todo/todo_list_view.dart';
+import 'package:wanted_flutter_challenge/presentation/todo/todo_list_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.greenAccent,
         ),
-        body: const TodoListView(),
+        body: const TodoListScreen(),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.greenAccent,
           onPressed: () {

@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wanted_flutter_challenge/presentation/todo/todo_detail_screen.dart';
 import 'package:wanted_flutter_challenge/provider/todo_list_provider.dart';
 
-class TodoListView extends ConsumerWidget {
-  const TodoListView({super.key});
+class TodoListScreen extends ConsumerWidget {
+  const TodoListScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -71,7 +71,7 @@ class EmptyTodoListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('No todos yet!'),
+      child: Text('일정이 없습니다.😂'),
     );
   }
 }
